@@ -6,6 +6,12 @@
   justify-content: space-between;
   align-items: center;
   width: 25vw;
+  align-self: center;
+  justify-self: center;
+  aspect-ratio: 1/1.8;
+  background-color: rgba(0, 0, 0, 0.301);
+  color: white;
+  overflow: hidden;
 }
 
 .imageDiv {
@@ -25,5 +31,23 @@
   transition: width 0.2s ease-in;
   &:hover {
     width: 21vw;
+  }
+}
+
+.cardTitle {
+  font-size: 2vw;
+  text-align: center;
+  text-overflow: ellipsis;
+
+  width: 90%;
+}
+
+@keyframes slidein {
+  from {
+    transform: translateX(-150%);
+  }
+
+  to {
+    transform: translateX(150%);
   }
 }

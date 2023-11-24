@@ -1,0 +1,6 @@
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 30vw);
+  gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}

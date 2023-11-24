@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./GlobalStyles.scss";
 import { Header } from "./components/Header";
-import { MovieList } from "./components/MovieList";
+import { MovieList } from "./components/MovieList/MovieList";
 import { MoviesData } from "./Interfaces/AppInterfaces";
 
 function App() {

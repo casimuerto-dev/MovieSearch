@@ -3,7 +3,7 @@ import "./movieCard.scss";
 export function MovieCard(props: MovieObj) {
   return (
     <div className="movieCard">
-      <h3>{props.Title}</h3>
+      <h3 className="cardTitle">{props.Title}</h3>
       <div className="imageDiv">
         <img
           className="posterImage"
