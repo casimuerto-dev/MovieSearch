@@ -1,8 +1,16 @@
 import { MovieObj } from "../../Interfaces/AppInterfaces";
 import "./movieCard.scss";
+import { useGlobalContext } from "../../context/globalContext";
 export function MovieCard(props: MovieObj) {
+  const { toggleShowDetails } = useGlobalContext();
+
   return (
-    <div className="movieCard">
+    <div
+      className="movieCard"
+      onClick={() => {
+        toggleShowDetails((prev) => !prev);
+      }}
+    >
       <h3 className="cardTitle">{props.Title}</h3>
       <div className="imageDiv">
         <img

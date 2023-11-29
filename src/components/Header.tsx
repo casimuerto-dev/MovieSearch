@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { MoviesData } from "../Interfaces/AppInterfaces";
 interface responseData {
@@ -16,6 +16,8 @@ export function Header(props: Headerprops) {
   const [searchText, setSearchText] = useState("");
   const [pageNumber, setPageNumber] = useState(1);
   const [showError, setShowError] = useState(false);
+  const firstLoad = useRef(true);
+  const timeOutId = useRef<number>();
   const { updateData } = props;
   const getMoviesData = async () => {
     try {
@@ -36,21 +38,27 @@ export function Header(props: Headerprops) {
     }
   };
 
+  useEffect(() => {
+    if (!firstLoad.current) {
+      clearTimeout(timeOutId.current);
+      timeOutId.current = setTimeout(() => {
+        getMoviesData();
+      }, 300);
+    }
+    firstLoad.current = false;
+  }, [searchText]);
+
   return (
     <header>
-      <p>{searchText}</p>
+      <h1>Look for your favorite movie</h1>
       <input
+        placeholder="Avengers"
         onChange={(event) => setSearchText(event.target.value)}
         value={searchText}
       ></input>
-      <button
-        onClick={() => {
-          getMoviesData();
-        }}
-      >
-        Search movies
-      </button>
-      {showError && <h2>Ups there was an error</h2>}
+
+      {showError && searchText.length === 0 && <h2>Search something!</h2>}
+      {showError && searchText.length !== 0 && <h2>No results &#128533;</h2>}
     </header>
   );
 }
