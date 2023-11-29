@@ -13,4 +13,9 @@ interface MovieObj {
     Error?:string
   }
 
-  export type {MovieObj, MoviesData}
+  interface SelectedDetails {
+    showModal: Boolean;
+    data: MovieObj;
+  }
+
+  export type {MovieObj, MoviesData, SelectedDetails}

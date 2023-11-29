@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./GlobalStyles.scss";
 import { Header } from "./components/Header";
 import { MovieList } from "./components/MovieList/MovieList";
-import { MoviesData } from "./Interfaces/AppInterfaces";
+import { MoviesData, SelectedDetails } from "./Interfaces/AppInterfaces";
 import { DetailsModal } from "./components/DetailsModal/DetailsModal";
 import { globalContext } from "./context/globalContext";
 
@@ -13,7 +13,10 @@ function App() {
     Response: "",
   });
 
-  const [showDetails, toggleShowDetails] = useState<boolean>(false);
+  const [movieDetails, toggleShowDetails] = useState<SelectedDetails>({
+    showModal: false,
+    data: { Title: "", Year: "", imdbID: "", Type: "", Poster: "" },
+  });
 
   useEffect(() => {
     console.log("what we have", moviesData);
@@ -22,10 +25,10 @@ function App() {
 
   return (
     <>
-      <globalContext.Provider value={{ showDetails, toggleShowDetails }}>
+      <globalContext.Provider value={{ movieDetails, toggleShowDetails }}>
         <Header updateData={setMoviesData}></Header>
         <MovieList list={moviesData.Search} />
-        {showDetails && <DetailsModal />}
+        {movieDetails.showModal && <DetailsModal />}
       </globalContext.Provider>
     </>
   );

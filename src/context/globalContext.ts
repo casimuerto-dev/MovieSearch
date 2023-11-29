@@ -1,8 +1,9 @@
-import { createContext, useContext, useState } from "react";
+import { Dispatch, SetStateAction, createContext, useContext,  } from "react";
+import { SelectedDetails } from "../Interfaces/AppInterfaces";
 
 type contextObj={
-showDetails:boolean,
-toggleShowDetails:React.Dispatch<React.SetStateAction<boolean>>
+movieDetails:SelectedDetails,
+toggleShowDetails:Dispatch<SetStateAction<SelectedDetails>>
 }
 
 export const globalContext=createContext<contextObj|null>(null)

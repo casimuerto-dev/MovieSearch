@@ -8,7 +8,10 @@ export function MovieCard(props: MovieObj) {
     <div
       className="movieCard"
       onClick={() => {
-        toggleShowDetails((prev) => !prev);
+        toggleShowDetails((prev) => ({
+          showModal: !prev.showModal,
+          data: { ...props },
+        }));
       }}
     >
       <h3 className="cardTitle">{props.Title}</h3>
