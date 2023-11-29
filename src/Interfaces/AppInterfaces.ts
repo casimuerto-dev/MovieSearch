@@ -1,21 +1,43 @@
 interface MovieObj {
-    Title: string;
-    Year: string;
-    imdbID: string;
-    Type: string;
-    Poster: string;
-  }
-  
-  interface MoviesData {
-    Search: MovieObj[];
-    totalresults: string;
-    Response: string;
-    Error?:string
-  }
+  Title: string;
+  Year: string;
+  imdbID: string;
+  Type: string;
+  Poster: string;
+}
 
-  interface SelectedDetails {
-    showModal: Boolean;
-    data: MovieObj;
-  }
+interface MoviesData {
+  Search: MovieObj[];
+  totalresults: string;
+  Response: string;
+  Error?: string;
+}
 
-  export type {MovieObj, MoviesData, SelectedDetails}
+interface MovieDetails {
+  Plot: string;
+  Response: string;
+  Error?: string;
+}
+
+interface SelectedDetails {
+  showModal: Boolean;
+  data: MovieObj;
+}
+
+interface responseData {
+  data: MoviesData;
+  response: string;
+}
+
+interface responseDetails {
+  data: MovieDetails;
+}
+
+export type {
+  MovieObj,
+  MoviesData,
+  SelectedDetails,
+  responseData,
+  MovieDetails,
+  responseDetails,
+};

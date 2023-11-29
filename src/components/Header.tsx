@@ -1,13 +1,8 @@
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { MoviesData } from "../Interfaces/AppInterfaces";
-interface responseData {
-  data: MoviesData;
-  response: string;
-}
-
-const API_KEY = "4287ad07";
-const BASE_URL = `http://www.omdbapi.com?apikey=${API_KEY}&`;
+import { BASE_URL } from "../constants/constants";
+import { responseData } from "../Interfaces/AppInterfaces";
 
 interface Headerprops {
   updateData: Dispatch<SetStateAction<MoviesData>>;
