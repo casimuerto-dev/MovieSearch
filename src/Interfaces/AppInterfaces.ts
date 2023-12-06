@@ -8,7 +8,7 @@ interface MovieObj {
 
 interface MoviesData {
   Search: MovieObj[];
-  totalresults: string;
+  totalResults: string;
   Response: string;
   Error?: string;
 }
