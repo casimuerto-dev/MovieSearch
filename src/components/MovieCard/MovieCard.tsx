@@ -25,7 +25,7 @@ export function MovieCard(props: MovieObj) {
           }
         />
       </div>
-      <p>Year {props.Year}</p>
+      <p className="cardYear">Year {props.Year}</p>
     </div>
   );
 }

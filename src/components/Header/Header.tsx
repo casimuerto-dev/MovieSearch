@@ -7,6 +7,7 @@ import {
   useGlobalContext,
   getAmountOfPages,
 } from "../../context/globalContext";
+import "./Header.scss";
 
 interface Headerprops {
   updateData: Dispatch<SetStateAction<MoviesData>>;
@@ -55,9 +56,10 @@ export function Header(props: Headerprops) {
   }, [searchText, pageNumber]);
 
   return (
-    <header>
-      <h1>Look for your favorite movie</h1>
+    <header className="header">
+      <h1 className="mainTitle">Look for your favorite movie</h1>
       <input
+        className="titleInput"
         placeholder="Avengers"
         onChange={(event) => {
           setPageNumber(1);
@@ -66,8 +68,12 @@ export function Header(props: Headerprops) {
         value={searchText}
       ></input>
 
-      {showError && searchText.length === 0 && <h2>Search something!</h2>}
-      {showError && searchText.length !== 0 && <h2>No results &#128533;</h2>}
+      {showError && searchText.length === 0 && (
+        <h2 className="headerMessage">Search something!</h2>
+      )}
+      {showError && searchText.length !== 0 && (
+        <h2 className="headerMessage">No results &#128533;</h2>
+      )}
     </header>
   );
 }

@@ -1,5 +1,4 @@
 .movieCard {
-  border: 1px solid black;
   margin: 10px;
   display: flex;
   flex-direction: column;
@@ -9,9 +8,17 @@
   align-self: center;
   justify-self: center;
   aspect-ratio: 1/1.6;
-  background-color: rgba(0, 0, 0, 0.301);
+  background-color: rgba(218, 73, 73, 0.301);
   color: white;
   overflow: hidden;
+  border-radius: 5px;
+  background: rgba(220, 229, 232, 0.37);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.5px);
+  -webkit-backdrop-filter: blur(4.5px);
+  border: 1px solid rgba(149, 214, 238, 0.59);
+  font-family: "Indie Flower", cursive;
+  color: black;
 }
 
 .imageDiv {
@@ -35,11 +42,16 @@
 }
 
 .cardTitle {
-  font-size: 0.9vw;
+  font-size: 15px;
   text-align: center;
   text-overflow: ellipsis;
-
   width: 90%;
+  font-size: 1.5vw;
+}
+
+.cardYear {
+  font-weight: bold;
+  font-size: 1.5vw;
 }
 
 @keyframes slidein {
