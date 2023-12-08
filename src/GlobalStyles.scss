@@ -1,6 +1,5 @@
 // Google fonts
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@1,500&display=swap");
 
 body {
   background-image: url(https://wallpapers.com/images/featured/movie-9pvmdtvz4cb0xl37.jpg);
@@ -14,3 +13,5 @@ body {
 body::-webkit-scrollbar {
   display: none; /* Safari and Chrome */
 }
+
+$primary-font: "Indie Flower", cursive;
