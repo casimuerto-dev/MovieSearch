@@ -13,7 +13,7 @@ interface MoviesData {
   Error?: string;
 }
 
-interface MovieDetails {
+interface MovieDetails extends MovieObj {
   Plot: string;
   Response: string;
   Error?: string;

@@ -11,6 +11,7 @@ export function DetailsModal() {
   const [detailsToShow, setDetailsToShow] = useState({
     Plot: "",
     Response: "True",
+    Poster: "",
   });
 
   const [loading, setLoading] = useState(true);
@@ -26,8 +27,9 @@ export function DetailsModal() {
         console.error("Error when fetching movie details");
       } else {
         console.log("got response", response);
-        const { Plot, Response } = response.data;
-        setDetailsToShow({ Plot, Response });
+        const { Plot, Response, Poster } = response.data;
+        setDetailsToShow({ Plot, Response, Poster });
+
         setLoading(false);
       }
     } catch (error) {
@@ -40,21 +42,33 @@ export function DetailsModal() {
   }, []);
   return (
     <>
-      <div className="modalBackground"></div>
-      <div className="modalInfo">
-        <button
-          onClick={() =>
-            globalObj.toggleShowDetails((prev) => ({
-              showModal: !prev.showModal,
-              data: { ...prev.data },
-            }))
-          }
-        >
-          X
-        </button>
-        <h2>{globalObj.movieDetails.data.Title}</h2>
-        <p>{globalObj.movieDetails.data.Year}</p>
-        <p>{!loading ? detailsToShow.Plot : "Loading"}</p>
+      <div
+        className="modalBackground"
+        style={{
+          backgroundImage: `url(${detailsToShow.Poster})`,
+          backgroundPosition: "center",
+          backgroundSize: "contain",
+        }}
+      ></div>
+      <div className="modalPositionDiv">
+        <div className="modalInfo">
+          <button
+            className="modalButton-close"
+            onClick={() =>
+              globalObj.toggleShowDetails((prev) => ({
+                showModal: !prev.showModal,
+                data: { ...prev.data },
+              }))
+            }
+          >
+            X
+          </button>
+          <h2>{globalObj.movieDetails.data.Title}</h2>
+          <p>{globalObj.movieDetails.data.Year}</p>
+          <p className="modalPlot">
+            {!loading ? detailsToShow.Plot : "Loading"}
+          </p>
+        </div>
       </div>
     </>
   );

@@ -25,7 +25,6 @@ export function Header(props: Headerprops) {
       const response: responseData = await axios.get(
         `${BASE_URL}s=${searchText}&type=movie&page=${pageNumber}`
       );
-      console.log("DATA BABY", response);
       if (response.data.Response === "False") {
         setShowError(true);
         updateData({ Search: [], totalResults: "", Response: "" });
@@ -60,7 +59,7 @@ export function Header(props: Headerprops) {
       <h1 className="mainTitle">Look for your favorite movie</h1>
       <input
         className="titleInput"
-        placeholder="Avengers"
+        placeholder="Search Something"
         onChange={(event) => {
           setPageNumber(1);
           setSearchText(event.target.value);
