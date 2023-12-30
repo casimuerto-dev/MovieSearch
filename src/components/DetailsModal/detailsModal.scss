@@ -2,7 +2,6 @@
 
 .modal {
   &Background {
-    background-color: black;
     opacity: 1;
     height: 100vh;
     width: 100vw;
@@ -10,24 +9,24 @@
     top: 0;
     left: 0;
     z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   &PositionDiv {
     z-index: 200;
     position: fixed;
-    top: 10%;
-    left: 25%;
   }
 
   &Info {
-    z-index: 200;
+    z-index: 201;
     background-color: white;
     border: 1px solid red;
-    width: 50vw;
-    height: 80vh;
+    max-width: 50%;
     display: flex;
     flex-direction: column;
-
+    margin: auto;
     background: rgba(220, 229, 232, 0.37);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(4.5px);

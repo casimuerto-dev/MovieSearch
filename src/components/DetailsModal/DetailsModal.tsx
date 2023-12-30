@@ -49,25 +49,26 @@ export function DetailsModal() {
           backgroundPosition: "center",
           backgroundSize: "contain",
         }}
-      ></div>
-      <div className="modalPositionDiv">
-        <div className="modalInfo">
-          <button
-            className="modalButton-close"
-            onClick={() =>
-              globalObj.toggleShowDetails((prev) => ({
-                showModal: !prev.showModal,
-                data: { ...prev.data },
-              }))
-            }
-          >
-            X
-          </button>
-          <h2>{globalObj.movieDetails.data.Title}</h2>
-          <p>{globalObj.movieDetails.data.Year}</p>
-          <p className="modalPlot">
-            {!loading ? detailsToShow.Plot : "Loading"}
-          </p>
+      >
+        <div className="modalPositionDiv">
+          <div className="modalInfo">
+            <button
+              className="modalButton-close"
+              onClick={() =>
+                globalObj.toggleShowDetails((prev) => ({
+                  showModal: !prev.showModal,
+                  data: { ...prev.data },
+                }))
+              }
+            >
+              X
+            </button>
+            <h2>{globalObj.movieDetails.data.Title}</h2>
+            <p>{globalObj.movieDetails.data.Year}</p>
+            <p className="modalPlot">
+              {!loading ? detailsToShow.Plot : "Loading"}
+            </p>
+          </div>
         </div>
       </div>
     </>
