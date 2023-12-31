@@ -37,6 +37,8 @@
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box; /* Firefox, other Gecko */
     box-sizing: border-box;
+    border-radius: 10px;
+    padding: 5px;
   }
 
   &Button-close {
@@ -52,6 +54,10 @@
     border-radius: 10px;
     margin: 11px;
     box-shadow: 5px 5px 5px black;
+    color: white;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    background: rgba(0, 0, 0, 0.8);
   }
 
   &Plot {
