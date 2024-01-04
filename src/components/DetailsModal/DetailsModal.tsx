@@ -63,8 +63,10 @@ export function DetailsModal() {
             >
               X
             </button>
-            <h2>{globalObj.movieDetails.data.Title}</h2>
-            <p>{globalObj.movieDetails.data.Year}</p>
+            <div className="modalTitleDiv">
+              <h2>{globalObj.movieDetails.data.Title}</h2>
+              <p>{globalObj.movieDetails.data.Year}</p>
+            </div>
             <p className="modalPlot">
               {!loading ? detailsToShow.Plot : "Loading"}
             </p>

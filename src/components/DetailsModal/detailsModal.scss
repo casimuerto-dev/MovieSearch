@@ -65,4 +65,20 @@
       display: none; /* Safari and Chrome */
     }
   }
+
+  &TitleDiv {
+    border: 1px solid rgba(149, 214, 238, 0.59);
+    box-shadow: 5px 5px 10px black;
+    border-radius: 10px;
+    margin-top: 5px;
+    h2,
+    p {
+      text-align: center;
+      margin: 5px;
+    }
+    p {
+      font-weight: bold;
+      margin: 0;
+    }
+  }
 }
