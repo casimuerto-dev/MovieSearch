@@ -52,18 +52,18 @@ export function DetailsModal() {
       >
         <div className="modalPositionDiv">
           <div className="modalInfo">
-            <button
-              className="modalButton-close"
-              onClick={() =>
-                globalObj.toggleShowDetails((prev) => ({
-                  showModal: !prev.showModal,
-                  data: { ...prev.data },
-                }))
-              }
-            >
-              X
-            </button>
             <div className="modalTitleDiv">
+              <button
+                className="modalButton-close"
+                onClick={() =>
+                  globalObj.toggleShowDetails((prev) => ({
+                    showModal: !prev.showModal,
+                    data: { ...prev.data },
+                  }))
+                }
+              >
+                X
+              </button>
               <h2>{globalObj.movieDetails.data.Title}</h2>
               <p>{globalObj.movieDetails.data.Year}</p>
             </div>
