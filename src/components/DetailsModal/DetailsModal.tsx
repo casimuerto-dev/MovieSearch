@@ -43,7 +43,8 @@ export function DetailsModal() {
   return (
     <>
       <div
-        className="modalBackground"
+        id="detailsBackgorund"
+        className="modalBackground intro"
         style={{
           backgroundImage: `url(${detailsToShow.Poster})`,
           backgroundPosition: "center",
@@ -64,11 +65,13 @@ export function DetailsModal() {
               >
                 X
               </button>
+
               <h2>{globalObj.movieDetails.data.Title}</h2>
+
               <p>{globalObj.movieDetails.data.Year}</p>
             </div>
             <p className="modalPlot">
-              {!loading ? detailsToShow.Plot : "Loading"}
+              {!loading ? detailsToShow.Plot : "Loading..."}
             </p>
           </div>
         </div>

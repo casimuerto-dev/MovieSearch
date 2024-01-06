@@ -1,6 +1,7 @@
 @import "../../GlobalStyles.scss";
 
 .movieCard {
+  cursor: pointer;
   margin: 10px;
   display: flex;
   flex-direction: column;

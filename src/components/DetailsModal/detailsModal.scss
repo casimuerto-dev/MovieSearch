@@ -12,6 +12,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    backdrop-filter: blur(4.5px);
+    -webkit-backdrop-filter: blur(4.5px);
   }
 
   &PositionDiv {
@@ -39,6 +41,7 @@
     box-sizing: border-box;
     border-radius: 10px;
     padding: 5px;
+    max-width: 500px;
   }
 
   &Button-close {
@@ -67,6 +70,8 @@
   }
 
   &TitleDiv {
+    display: flex;
+    flex-direction: column;
     border: 1px solid rgba(149, 214, 238, 0.59);
     box-shadow: 5px 5px 10px black;
     border-radius: 10px;
@@ -75,6 +80,7 @@
     p {
       text-align: center;
       margin: 5px;
+      padding: 0 56px;
     }
     p {
       font-weight: bold;
@@ -89,7 +95,8 @@
     font-size: 16px;
     background: transparent;
     border: none;
-    position: relative;
+    position: absolute;
+    margin: 5px 5px 0 0;
     color: #f0f0f0;
     cursor: pointer;
     z-index: 1;
