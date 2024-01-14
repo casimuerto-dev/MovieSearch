@@ -15,9 +15,10 @@ interface Headerprops {
 export function Header(props: Headerprops) {
   const [searchText, setSearchText] = useState("");
   const [showError, setShowError] = useState(false);
-  const firstLoad = useRef(true);
+
   const timeOutId = useRef<number>();
-  const { pageNumber, setPageNumber, setAmountOfPages } = useGlobalContext();
+  const { pageNumber, setPageNumber, setAmountOfPages, firstLoad } =
+    useGlobalContext();
   const { updateData } = props;
 
   const getMoviesData = async () => {

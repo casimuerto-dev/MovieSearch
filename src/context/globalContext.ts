@@ -8,6 +8,7 @@ type contextObj = {
   setPageNumber: Dispatch<SetStateAction<number>>;
   amountOfPages: number;
   setAmountOfPages: Dispatch<SetStateAction<number>>;
+  firstLoad: React.MutableRefObject<boolean>;
 };
 
 export const getAmountOfPages = (amountOfResults: number) => {

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import "./GlobalStyles.scss";
 import { Header } from "./components/Header/Header";
 import { MovieList } from "./components/MovieList/MovieList";
@@ -12,7 +12,7 @@ function App() {
     totalResults: "",
     Response: "",
   });
-
+  const firstLoad = useRef(true);
   const [pageNumber, setPageNumber] = useState<number>(1);
   const [amountOfPages, setAmountOfPages] = useState<number>(1);
   const [movieDetails, toggleShowDetails] = useState<SelectedDetails>({
@@ -34,6 +34,7 @@ function App() {
           setPageNumber,
           amountOfPages,
           setAmountOfPages,
+          firstLoad,
         }}
       >
         <Header updateData={setMoviesData}></Header>
