@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useState, useRef } from "react";
 import "./GlobalStyles.scss";
 import { Header } from "./components/Header/Header";
 import { MovieList } from "./components/MovieList/MovieList";
