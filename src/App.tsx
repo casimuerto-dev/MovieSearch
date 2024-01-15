@@ -20,10 +20,6 @@ function App() {
     data: { Title: "", Year: "", imdbID: "", Type: "", Poster: "" },
   });
 
-  useEffect(() => {
-    console.log("what we have", moviesData);
-  }, [moviesData]);
-
   return (
     <>
       <globalContext.Provider

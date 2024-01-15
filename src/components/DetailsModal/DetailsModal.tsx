@@ -17,7 +17,6 @@ export function DetailsModal() {
   const [loading, setLoading] = useState(true);
 
   const getMoviePlot = async (IMDBId: string) => {
-    console.log("getting details");
     try {
       const response: responseDetails = await axios.get(
         `${BASE_URL}i=${IMDBId}&type=movie&plot=full`
@@ -26,7 +25,6 @@ export function DetailsModal() {
       if (response.data.Response === "False") {
         console.error("Error when fetching movie details");
       } else {
-        console.log("got response", response);
         const { Plot, Response, Poster } = response.data;
         setDetailsToShow({ Plot, Response, Poster });
 
